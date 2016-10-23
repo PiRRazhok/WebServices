@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebApplication.Models.CarModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Series)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoorNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BodyType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.cars) {
+    <tr>
+        <td>
+            @item.Brand
+        </td>
+        <td>
+            @item.Series
+        </td>
+        <td>
+            @item.ReleaseYear
+        </td>
+        <td>
+            @item.DoorNum
+        </td>
+        <td>
+            @item.Color
+        </td>
+        <td>
+            @item.BodyType
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
