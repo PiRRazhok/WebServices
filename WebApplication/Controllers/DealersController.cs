@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication.DealerServiceReference;
-using WebApplication.CarServiceReference;
+using WebApplication.DealerServiceRef;
+using WebApplication.CarServiceRef;
 using WebApplication.Models;
 
 namespace WebApplication.Controllers
@@ -134,7 +134,7 @@ namespace WebApplication.Controllers
         {
             using (var client = new DealerServiceClient())
             {
-                DealerServiceReference.Car[] carsData = client.getDealerCars(id);
+                DealerServiceRef.Car[] carsData = client.getDealerCars(id);
                 List<CarModel> cars = new List<CarModel>();
                 if (carsData != null)
                 {
@@ -157,7 +157,7 @@ namespace WebApplication.Controllers
         {
             using (var client = new CarServiceClient())
             {
-                CarServiceReference.Car[] carsData = client.getAllCars();
+                CarServiceRef.Car[] carsData = client.getAllCars();
                 List<CarModel> cars = new List<CarModel>();
                 foreach (var car in carsData)
                 {
@@ -179,8 +179,8 @@ namespace WebApplication.Controllers
             DealerServiceClient dealerClient = new DealerServiceClient();
             CarServiceClient carClient = new CarServiceClient();
 
-            CarServiceReference.Car car = carClient.getCar(carId);
-            DealerServiceReference.Car dealerCar = new DealerServiceReference.Car(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType);
+            CarServiceRef.Car car = carClient.getCar(carId);
+            DealerServiceRef.Car dealerCar = new DealerServiceRef.Car(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType);
             dealerClient.addDealerCar(id, dealerCar);
             
             return RedirectToAction("ListCars", new { id=id });

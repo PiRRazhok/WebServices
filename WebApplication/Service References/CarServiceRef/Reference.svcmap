@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bec13bb3-ef67-4316-85f6-f11ee849cf7f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="79f79a1e-d29b-4981-a2eb-eca20d4f7867" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:2113/CarService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CarService.xsd" MetadataType="Schema" ID="dcc0d955-20f9-4192-816c-d71c23d7fb14" SourceId="1" SourceUrl="http://localhost:2113/CarService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CarService1.xsd" MetadataType="Schema" ID="93ab6f25-60a8-4951-8c9c-565d46dd98ab" SourceId="1" SourceUrl="http://localhost:2113/CarService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CarService.disco" MetadataType="Disco" ID="ae0b8ed8-eaf4-41b3-a734-69ef86429825" SourceId="1" SourceUrl="http://localhost:2113/CarService.svc?disco" />
-    <MetadataFile FileName="CarService.wsdl" MetadataType="Wsdl" ID="78c8a354-0c04-498e-8a76-f6eeadd92da1" SourceId="1" SourceUrl="http://localhost:2113/CarService.svc?wsdl" />
-    <MetadataFile FileName="CarService2.xsd" MetadataType="Schema" ID="21f97386-156f-460a-9280-4cd5d1bc6d77" SourceId="1" SourceUrl="http://localhost:2113/CarService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CarService.xsd" MetadataType="Schema" ID="6e6d51b8-b23b-4e47-b0de-ade9a8b981f6" SourceId="1" SourceUrl="http://localhost:2113/CarService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CarService1.xsd" MetadataType="Schema" ID="d3b8f381-0724-40dd-9fa3-89c646e5618d" SourceId="1" SourceUrl="http://localhost:2113/CarService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CarService.disco" MetadataType="Disco" ID="98d17d23-1ca5-4dce-be6c-16c16e326e48" SourceId="1" SourceUrl="http://localhost:2113/CarService.svc?disco" />
+    <MetadataFile FileName="CarService.wsdl" MetadataType="Wsdl" ID="27c17901-3edb-46ce-8340-fdc6530d58d9" SourceId="1" SourceUrl="http://localhost:2113/CarService.svc?wsdl" />
+    <MetadataFile FileName="CarService2.xsd" MetadataType="Schema" ID="bb689f5f-33dd-4998-be0d-caa5fb0ed8b3" SourceId="1" SourceUrl="http://localhost:2113/CarService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

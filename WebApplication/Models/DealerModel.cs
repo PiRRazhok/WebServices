@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using WebApplication.DealerServiceReference;
+using WebApplication.DealerServiceRef;
+//using WebApplication.DealerServiceReference;
 
 namespace WebApplication.Models
 {
@@ -37,7 +38,7 @@ namespace WebApplication.Models
                     this.Cars.Add(new CarModel(cars[i].Id, cars[i].Brand, cars[i].Series, cars[i].ReleaseYear, cars[i].DoorNum, cars[i].Color, cars[i].BodyType));
                 }
             }
-            
+
         }
     }
 }

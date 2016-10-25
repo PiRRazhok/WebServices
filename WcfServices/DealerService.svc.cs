@@ -7,8 +7,6 @@ using System.Text;
 
 namespace WcfServices
 {
-    // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени класса "DealerService" в коде, SVC-файле и файле конфигурации.
-    // ПРИМЕЧАНИЕ. Чтобы запустить клиент проверки WCF для тестирования службы, выберите элементы DealerService.svc или DealerService.svc.cs в обозревателе решений и начните отладку.
     public class DealerService : IDealerService
     {
         // GET

@@ -7,7 +7,6 @@ using System.Text;
 
 namespace WcfServices
 {
-    // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени интерфейса "IDealerService" в коде и файле конфигурации.
     [ServiceContract]
     public interface IDealerService
     {

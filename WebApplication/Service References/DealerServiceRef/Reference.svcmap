@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="57b6a3b1-954b-4f19-b51a-3fcb034c6c66" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cf4ad784-e8b6-4811-b619-38a0d0959e8e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:2113/DealerService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DealerService.xsd" MetadataType="Schema" ID="62e83bc3-814f-41db-b666-71f0dc079384" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?xsd=xsd0" />
-    <MetadataFile FileName="DealerService.disco" MetadataType="Disco" ID="d992710f-5dac-452b-8f15-6d130fdd77c7" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?disco" />
-    <MetadataFile FileName="DealerService1.xsd" MetadataType="Schema" ID="3099baea-9710-468c-a678-830050f76328" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?xsd=xsd1" />
-    <MetadataFile FileName="DealerService11.xsd" MetadataType="Schema" ID="82625b1d-7878-41dc-b1f3-56691f2deafa" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?xsd=xsd2" />
-    <MetadataFile FileName="DealerService.wsdl" MetadataType="Wsdl" ID="0da23c61-8419-4859-95fd-0fcd8b1205f4" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?wsdl" />
+    <MetadataFile FileName="DealerService.xsd" MetadataType="Schema" ID="d205d700-026a-474d-8f7e-b4ad011e2d22" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DealerService.disco" MetadataType="Disco" ID="05672e69-647f-4583-9a1c-839aa2c82416" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?disco" />
+    <MetadataFile FileName="DealerService1.xsd" MetadataType="Schema" ID="685c3d8f-d765-4fe3-99fc-3fc38703ba0f" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DealerService2.xsd" MetadataType="Schema" ID="beade139-58fd-4866-bcf5-3b83640af490" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DealerService.wsdl" MetadataType="Wsdl" ID="d451d56e-9b94-40d9-bfbc-ac3f158f00bd" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
