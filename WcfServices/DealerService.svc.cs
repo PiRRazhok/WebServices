@@ -49,11 +49,6 @@ namespace WcfServices
                 {
                     dealer.Name = updatedDealer.Name;
                     dealer.Email = updatedDealer.Email;
-                    dealer.Cars.Clear();
-                    foreach (var car in updatedDealer.Cars)
-                    {
-                        dealer.Cars.Add(new Car(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
-                    }
                 }
             }
             jsonManager.WriteDealersJson(dealers);

@@ -104,7 +104,13 @@ namespace WebApplication.Controllers
         // GET: Dealer/Delete/5
         public ActionResult Delete(string id)
         {
-            return View();
+            using (var client = new DealerServiceClient())
+            {
+                Dealer dealer = client.getDealer(id);
+                ViewBag.dealer = dealer;
+                DealerModel editingDealer = new DealerModel(dealer.Id, dealer.Name, dealer.Email, dealer.Cars);
+                return View(editingDealer);
+            }
         }
 
         // POST: Dealer/Delete/5

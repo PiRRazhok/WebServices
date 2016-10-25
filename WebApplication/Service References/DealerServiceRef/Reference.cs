@@ -39,11 +39,15 @@ namespace WebApplication.DealerServiceRef {
         {
             Name = name;
             Email = email;
+            Cars = new Car[0];
         }
 
-        public Dealer(string name, string email, string email1) : this(name, email)
+        public Dealer(string id, string name, string email)
         {
-            this.email1 = email1;
+            Id = id;
+            Name = name;
+            Email = email;
+            Cars = new Car[0];
         }
 
         [global::System.ComponentModel.BrowsableAttribute(false)]
