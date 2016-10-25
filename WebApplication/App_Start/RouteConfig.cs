@@ -24,6 +24,12 @@ namespace WebApplication
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Cars", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Dealers",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Dealers", action = "Index", id = UrlParameter.Optional }
+            );
         }
     }
 }

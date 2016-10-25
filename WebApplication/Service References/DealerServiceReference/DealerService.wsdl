@@ -3,24 +3,159 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:2113/DealerService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2113/DealerService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2113/DealerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfServices" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IDealerService_DoWork_InputMessage">
-    <wsdl:part name="parameters" element="tns:DoWork" />
+  <wsdl:message name="IDealerService_getAllDealers_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllDealers" />
   </wsdl:message>
-  <wsdl:message name="IDealerService_DoWork_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  <wsdl:message name="IDealerService_getAllDealers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllDealersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_getDealer_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDealer" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_getDealer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_addDealer_InputMessage">
+    <wsdl:part name="parameters" element="tns:addDealer" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_addDealer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_updateDealer_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateDealer" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_updateDealer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_deleteDealer_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDealer" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_deleteDealer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_getDealerCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDealerCars" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_getDealerCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDealerCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_addDealerCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:addDealerCar" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_addDealerCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addDealerCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_deleteDealerCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDealerCar" />
+  </wsdl:message>
+  <wsdl:message name="IDealerService_deleteDealerCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDealerCarResponse" />
   </wsdl:message>
   <wsdl:portType name="IDealerService">
-    <wsdl:operation name="DoWork">
-      <wsdl:input wsaw:Action="http://tempuri.org/IDealerService/DoWork" message="tns:IDealerService_DoWork_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IDealerService/DoWorkResponse" message="tns:IDealerService_DoWork_OutputMessage" />
+    <wsdl:operation name="getAllDealers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealerService/getAllDealers" message="tns:IDealerService_getAllDealers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealerService/getAllDealersResponse" message="tns:IDealerService_getAllDealers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDealer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealerService/getDealer" message="tns:IDealerService_getDealer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealerService/getDealerResponse" message="tns:IDealerService_getDealer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addDealer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealerService/addDealer" message="tns:IDealerService_addDealer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealerService/addDealerResponse" message="tns:IDealerService_addDealer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDealer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealerService/updateDealer" message="tns:IDealerService_updateDealer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealerService/updateDealerResponse" message="tns:IDealerService_updateDealer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDealer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealerService/deleteDealer" message="tns:IDealerService_deleteDealer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealerService/deleteDealerResponse" message="tns:IDealerService_deleteDealer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDealerCars">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealerService/getDealerCars" message="tns:IDealerService_getDealerCars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealerService/getDealerCarsResponse" message="tns:IDealerService_getDealerCars_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addDealerCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealerService/addDealerCar" message="tns:IDealerService_addDealerCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealerService/addDealerCarResponse" message="tns:IDealerService_addDealerCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDealerCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDealerService/deleteDealerCar" message="tns:IDealerService_deleteDealerCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDealerService/deleteDealerCarResponse" message="tns:IDealerService_deleteDealerCar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDealerService" type="tns:IDealerService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="DoWork">
-      <soap:operation soapAction="http://tempuri.org/IDealerService/DoWork" style="document" />
+    <wsdl:operation name="getAllDealers">
+      <soap:operation soapAction="http://tempuri.org/IDealerService/getAllDealers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDealer">
+      <soap:operation soapAction="http://tempuri.org/IDealerService/getDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDealer">
+      <soap:operation soapAction="http://tempuri.org/IDealerService/addDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDealer">
+      <soap:operation soapAction="http://tempuri.org/IDealerService/updateDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDealer">
+      <soap:operation soapAction="http://tempuri.org/IDealerService/deleteDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDealerCars">
+      <soap:operation soapAction="http://tempuri.org/IDealerService/getDealerCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDealerCar">
+      <soap:operation soapAction="http://tempuri.org/IDealerService/addDealerCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDealerCar">
+      <soap:operation soapAction="http://tempuri.org/IDealerService/deleteDealerCar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

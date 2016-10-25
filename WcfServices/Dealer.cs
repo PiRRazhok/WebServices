@@ -30,10 +30,5 @@ namespace WcfServices
             this.Cars = car;
             this.Email = email;
         }
-
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
     }
 }

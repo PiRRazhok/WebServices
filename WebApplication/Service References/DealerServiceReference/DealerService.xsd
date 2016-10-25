@@ -1,11 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="DoWork">
+  <xs:import schemaLocation="http://localhost:2113/DealerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfServices" />
+  <xs:element name="getAllDealers">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="DoWorkResponse">
+  <xs:element name="getAllDealersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfServices" minOccurs="0" name="getAllDealersResult" nillable="true" type="q1:ArrayOfDealer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDealer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dealerId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDealerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfServices" minOccurs="0" name="getDealerResult" nillable="true" type="q2:Dealer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addDealer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfServices" minOccurs="0" name="dealer" nillable="true" type="q3:Dealer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addDealerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateDealer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfServices" minOccurs="0" name="updatedDealer" nillable="true" type="q4:Dealer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateDealerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteDealer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dealerId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteDealerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDealerCars">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dealerId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDealerCarsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfServices" minOccurs="0" name="getDealerCarsResult" nillable="true" type="q5:ArrayOfCar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addDealerCar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dealerId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfServices" minOccurs="0" name="car" nillable="true" type="q6:Car" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addDealerCarResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteDealerCar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dealerId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfServices" minOccurs="0" name="car" nillable="true" type="q7:Car" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteDealerCarResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

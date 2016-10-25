@@ -244,7 +244,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CarsController.cs" />
-    <Compile Include="Controllers\DealerController.cs" />
+    <Compile Include="Controllers\DealersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
@@ -336,6 +336,8 @@
     <None Include="Service References\DealerServiceReference\DealerService.disco" />
     <None Include="Service References\DealerServiceReference\configuration91.svcinfo" />
     <None Include="Service References\DealerServiceReference\configuration.svcinfo" />
+    <None Include="Service References\DealerServiceReference\DealerService1.xsd" />
+    <None Include="Service References\DealerServiceReference\DealerService11.xsd" />
     <None Include="Service References\DealerServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -386,15 +388,22 @@
     </Content>
     <None Include="Service References\DealerServiceReference\DealerService.wsdl" />
     <None Include="Service References\DealerServiceReference\DealerService.xsd" />
-    <Content Include="Views\Dealer\Index.cshtml" />
-    <Content Include="Views\Dealer\Edit.cshtml" />
-    <Content Include="Views\Dealer\Delete.cshtml" />
-    <Content Include="Views\Dealer\Details.cshtml" />
+    <Content Include="Views\Dealers\Index.cshtml" />
+    <Content Include="Views\Dealers\Edit.cshtml" />
+    <Content Include="Views\Dealers\Delete.cshtml" />
+    <Content Include="Views\Dealers\Details.cshtml" />
     <Content Include="Views\Cars\Create.cshtml" />
-    <Content Include="Views\Cars\Index.cshtml" />
+    <Content Include="Views\Cars\Delete.cshtml" />
+    <Content Include="Service References\DealerServiceReference\WebApplication.DealerServiceReference.Car.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DealerServiceReference\WebApplication.DealerServiceReference.Dealer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Views\Cars\Edit.cshtml" />
     <Content Include="Views\Cars\Details.cshtml" />
-    <Content Include="Views\Cars\Delete.cshtml" />
+    <Content Include="Views\Cars\Index.cshtml" />
+    <Content Include="Views\Dealers\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

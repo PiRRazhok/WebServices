@@ -43,9 +43,16 @@ namespace WcfServices
             this.BodyType = type;
         }
 
-        public object Clone()
+        public Car(string id, string brand, string series, int year, int doors, string color, string type)
         {
-            return this.MemberwiseClone();
+            this.Id = id;
+            this.Brand = brand;
+            this.Series = series;
+            this.ReleaseYear = year;
+
+            this.DoorNum = doors;
+            this.Color = color;
+            this.BodyType = type;
         }
     }
 }

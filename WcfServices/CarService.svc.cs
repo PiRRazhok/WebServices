@@ -45,7 +45,15 @@ namespace WcfServices
             List<Car> cars = jsonManager.LoadCarsJson();
             foreach (var car in cars)
             {
-                if (car.Id == updatedCar.Id) updatedCar = (Car)car.Clone();
+                if (car.Id == updatedCar.Id)
+                {
+                    car.Brand = updatedCar.Brand;
+                    car.Series = updatedCar.Series;
+                    car.ReleaseYear = updatedCar.ReleaseYear;
+                    car.DoorNum = updatedCar.DoorNum;
+                    car.Color = updatedCar.Color;
+                    car.BodyType = updatedCar.BodyType;
+                }
             }
             jsonManager.WriteCarsJson(cars);
         }

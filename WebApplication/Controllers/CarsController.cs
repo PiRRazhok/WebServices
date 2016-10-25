@@ -15,11 +15,11 @@ namespace WebApplication.Controllers
         {
             using (var client = new CarServiceClient())
             {
-                CarServiceReference.Car[] carsData = client.getAllCars();
+                Car[] carsData = client.getAllCars();
                 List<CarModel> cars = new List<CarModel>();
                 foreach (var car in carsData)
                 {
-                    cars.Add(new CarModel(car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
+                    cars.Add(new CarModel(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
                 }
                 ViewBag.cars = cars;
                 return View((IEnumerable<CarModel>)cars);
@@ -31,9 +31,9 @@ namespace WebApplication.Controllers
         {
             using (var client = new CarServiceClient())
             {
-                CarServiceReference.Car car = client.getCar(id);
+                Car car = client.getCar(id);
                 ViewBag.car = car;
-                return View(new CarModel(car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
+                return View(new CarModel(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
             }
         }
 
@@ -58,7 +58,7 @@ namespace WebApplication.Controllers
 
                 using (var client = new CarServiceClient())
                 {
-                    CarServiceReference.Car newCar = new CarServiceReference.Car(brand, series, releaseYear, doorNum, color, bodyType);
+                    Car newCar = new Car(brand, series, releaseYear, doorNum, color, bodyType);
                     client.addCar(newCar);
                 }
 
@@ -75,15 +75,16 @@ namespace WebApplication.Controllers
         {
             using (var client = new CarServiceClient())
             {
-                CarServiceReference.Car car = client.getCar(id.ToString());
+                Car car = client.getCar(id);
                 ViewBag.car = car;
-                return View(new CarModel(car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
+                CarModel editingCar = new CarModel(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType);
+                return View(editingCar);
             }
         }
 
         // POST: Cars/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(string id, FormCollection collection)
         {
             try
             {
@@ -96,7 +97,7 @@ namespace WebApplication.Controllers
 
                 using (var client = new CarServiceClient())
                 {
-                    CarServiceReference.Car newCar = new CarServiceReference.Car(brand, series, releaseYear, doorNum, color, bodyType);
+                    Car newCar = new Car(id, brand, series, releaseYear, doorNum, color, bodyType);
                     client.updateCar(newCar);
                 }
 
@@ -113,9 +114,9 @@ namespace WebApplication.Controllers
         {
             using (var client = new CarServiceClient())
             {
-                CarServiceReference.Car car = client.getCar(id);
+                Car car = client.getCar(id);
                 ViewBag.car = car;
-                return View(new CarModel(car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
+                return View(new CarModel(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
             }
         }
 
@@ -127,7 +128,7 @@ namespace WebApplication.Controllers
             {
                 using (var client = new CarServiceClient())
                 {
-                    CarServiceReference.Car car = client.getCar(id);
+                    Car car = client.getCar(id);
                     client.deleteCar(car.Id);
                 }
 

@@ -8,7 +8,7 @@ namespace WebApplication.Models
 {
     public class CarModel
     {
-
+        [Key]
         public string Id;
 
         [Display(Name = "Brand")]
@@ -35,8 +35,10 @@ namespace WebApplication.Models
         [Required(ErrorMessage = "Required field")]
         public string BodyType { get; set; }
 
-        public CarModel(string brand, string series, int year, int doors, string color, string type)
+        public CarModel(string id, string brand, string series, int year, int doors, string color, string type)
         {
+            this.Id = id;
+
             this.Brand = brand;
             this.Series = series;
             this.ReleaseYear = year;

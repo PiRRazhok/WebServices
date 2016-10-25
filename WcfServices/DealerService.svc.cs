@@ -47,7 +47,16 @@ namespace WcfServices
             List<Dealer> dealers = jsonManager.LoadDealersJson();
             foreach (var dealer in dealers)
             {
-                if (dealer.Id == updatedDealer.Id) updatedDealer = (Dealer)dealer.Clone();
+                if (dealer.Id == updatedDealer.Id)
+                {
+                    dealer.Name = updatedDealer.Name;
+                    dealer.Email = updatedDealer.Email;
+                    dealer.Cars.Clear();
+                    foreach (var car in updatedDealer.Cars)
+                    {
+                        dealer.Cars.Add(new Car(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
+                    }
+                }
             }
             jsonManager.WriteDealersJson(dealers);
         }

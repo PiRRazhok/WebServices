@@ -24,6 +24,8 @@
   <Metadata>
     <MetadataFile FileName="DealerService.xsd" MetadataType="Schema" ID="62e83bc3-814f-41db-b666-71f0dc079384" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?xsd=xsd0" />
     <MetadataFile FileName="DealerService.disco" MetadataType="Disco" ID="d992710f-5dac-452b-8f15-6d130fdd77c7" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?disco" />
+    <MetadataFile FileName="DealerService1.xsd" MetadataType="Schema" ID="3099baea-9710-468c-a678-830050f76328" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DealerService11.xsd" MetadataType="Schema" ID="82625b1d-7878-41dc-b1f3-56691f2deafa" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?xsd=xsd2" />
     <MetadataFile FileName="DealerService.wsdl" MetadataType="Wsdl" ID="0da23c61-8419-4859-95fd-0fcd8b1205f4" SourceId="1" SourceUrl="http://localhost:2113/DealerService.svc?wsdl" />
   </Metadata>
   <Extensions>
