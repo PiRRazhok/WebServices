@@ -1,0 +1,85 @@
+﻿@model IEnumerable<WebApplication.Models.CarModel>
+
+@{
+    ViewBag.Title = "ListCars";
+}
+
+<h2>List Cars</h2>
+
+<dl class="dl-horizontal">
+    <dt>
+        Name
+    </dt>
+
+    <dd>
+        @ViewBag.dealer.Name
+    </dd>
+
+    <dt>
+        Email
+    </dt>
+
+    <dd>
+        @ViewBag.dealer.Email
+    </dd>
+</dl>
+
+<p>
+    @Html.ActionLink("Add Car", "AddCar", new { id = ViewBag.dealer.Id })
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Series)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoorNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BodyType)
+        </th>
+        @*<th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Series)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoorNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BodyType)
+            </td>
+            @*<td>
+                @Html.ActionLink("Delete", "DeleteCar", new { dealerId = ViewBag.dealer.Id, carId = item.Id })
+            </td>*@
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Back to Dealers List", "Index")
+</p>

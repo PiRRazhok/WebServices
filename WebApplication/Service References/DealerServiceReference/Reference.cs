@@ -147,7 +147,18 @@ namespace WebApplication.DealerServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SeriesField;
-        
+
+        public Car(string id, string brand, string series, int releaseYear, int doorNum, string color, string bodyType)
+        {
+            Id = id;
+            Brand = brand;
+            Series = series;
+            ReleaseYear = releaseYear;
+            DoorNum = doorNum;
+            Color = color;
+            BodyType = bodyType;
+        }
+
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -306,10 +317,10 @@ namespace WebApplication.DealerServiceReference {
         System.Threading.Tasks.Task addDealerCarAsync(string dealerId, WebApplication.DealerServiceReference.Car car);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDealerService/deleteDealerCar", ReplyAction="http://tempuri.org/IDealerService/deleteDealerCarResponse")]
-        void deleteDealerCar(string dealerId, WebApplication.DealerServiceReference.Car car);
+        void deleteDealerCar(string dealerId, string carId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDealerService/deleteDealerCar", ReplyAction="http://tempuri.org/IDealerService/deleteDealerCarResponse")]
-        System.Threading.Tasks.Task deleteDealerCarAsync(string dealerId, WebApplication.DealerServiceReference.Car car);
+        System.Threading.Tasks.Task deleteDealerCarAsync(string dealerId, string carId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -395,12 +406,12 @@ namespace WebApplication.DealerServiceReference {
             return base.Channel.addDealerCarAsync(dealerId, car);
         }
         
-        public void deleteDealerCar(string dealerId, WebApplication.DealerServiceReference.Car car) {
-            base.Channel.deleteDealerCar(dealerId, car);
+        public void deleteDealerCar(string dealerId, string carId) {
+            base.Channel.deleteDealerCar(dealerId, carId);
         }
         
-        public System.Threading.Tasks.Task deleteDealerCarAsync(string dealerId, WebApplication.DealerServiceReference.Car car) {
-            return base.Channel.deleteDealerCarAsync(dealerId, car);
+        public System.Threading.Tasks.Task deleteDealerCarAsync(string dealerId, string carId) {
+            return base.Channel.deleteDealerCarAsync(dealerId, carId);
         }
     }
 }

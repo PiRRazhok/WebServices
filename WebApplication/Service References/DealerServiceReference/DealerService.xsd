@@ -94,7 +94,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="dealerId" nillable="true" type="xs:string" />
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfServices" minOccurs="0" name="car" nillable="true" type="q7:Car" />
+        <xs:element minOccurs="0" name="carId" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

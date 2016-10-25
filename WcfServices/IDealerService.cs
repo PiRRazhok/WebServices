@@ -43,6 +43,6 @@ namespace WcfServices
         void addDealerCar(string dealerId, Car car);
 
         [OperationContract]
-        void deleteDealerCar(string dealerId, Car car);
+        void deleteDealerCar(string dealerId, string carId);
     }
 }

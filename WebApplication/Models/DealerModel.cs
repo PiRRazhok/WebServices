@@ -30,10 +30,14 @@ namespace WebApplication.Models
             this.Name = name;
             this.Email = email;
             this.Cars = new List<CarModel>();
-            foreach (var car in cars)
+            if (cars != null)
             {
-                this.Cars.Add(new CarModel(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
+                for (int i = 0; i < cars.Length; i++)
+                {
+                    this.Cars.Add(new CarModel(cars[i].Id, cars[i].Brand, cars[i].Series, cars[i].ReleaseYear, cars[i].DoorNum, cars[i].Color, cars[i].BodyType));
+                }
             }
+            
         }
     }
 }

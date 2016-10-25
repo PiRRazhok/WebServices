@@ -96,22 +96,26 @@ namespace WcfServices
             {
                 if (dealer.Id == dealerId)
                 {
+                    if (dealer.Cars == null)
+                    {
+                        dealer.Cars = new List<Car>();
+                    }
                     dealer.Cars.Add(car);
                 }
             }
             jsonManager.WriteDealersJson(dealers);
         }
 
-        public void deleteDealerCar(string dealerId, Car car)
+        public void deleteDealerCar(string dealerId, string carId)
         {
             List<Dealer> dealers = jsonManager.LoadDealersJson();
             foreach (var dealer in dealers)
             {
                 if (dealer.Id == dealerId)
                 {
-                    foreach (var _car in dealer.Cars)
+                    foreach (var car in dealer.Cars)
                     {
-                        if (_car.Id == car.Id) dealer.Cars.Remove(car);
+                        if (car.Id == carId) dealer.Cars.Remove(car);
                     }
                 }
             }

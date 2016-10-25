@@ -1,1 +1,1 @@
-﻿[ ]
+[{"Id":"0","Name":"Arseni Rozhok","Cars":[{"Id":"1","Brand":"Mazda","Series":"6","ReleaseYear":2016,"DoorNum":5,"Color":"red","BodyType":"Sedan"},{"Id":"0","Brand":"LADA","Series":"Vesta","ReleaseYear":2015,"DoorNum":5,"Color":"Baklazhan","BodyType":"Sedan"},{"Id":"2","Brand":"a","Series":"b","ReleaseYear":1234,"DoorNum":5,"Color":"blue","BodyType":"sedan"},{"Id":"1","Brand":"Mazda","Series":"6","ReleaseYear":2016,"DoorNum":5,"Color":"red","BodyType":"Sedan"}],"Email":"razhok.arseni@gmail.com"}]

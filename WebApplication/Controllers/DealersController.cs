@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication.DealerServiceReference;
+using WebApplication.CarServiceReference;
 using WebApplication.Models;
 
 namespace WebApplication.Controllers
@@ -101,7 +102,7 @@ namespace WebApplication.Controllers
         }
 
         // GET: Dealer/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
             return View();
         }
@@ -125,5 +126,74 @@ namespace WebApplication.Controllers
                 return View();
             }
         }
+
+
+
+        // GET: Dealer/ListCars
+        public ActionResult ListCars(string id)
+        {
+            using (var client = new DealerServiceClient())
+            {
+                DealerServiceReference.Car[] carsData = client.getDealerCars(id);
+                List<CarModel> cars = new List<CarModel>();
+                if (carsData != null)
+                {
+                    foreach (var car in carsData)
+                    {
+                        cars.Add(new CarModel(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
+                    }
+                }
+
+                Dealer dealer = client.getDealer(id);
+
+                ViewBag.cars = cars;
+                ViewBag.dealer = dealer;
+                return View((IEnumerable<CarModel>)cars);
+            }
+        }
+
+        // GET: Dealer/AddCar/5
+        public ActionResult AddCar(string id)
+        {
+            using (var client = new CarServiceClient())
+            {
+                CarServiceReference.Car[] carsData = client.getAllCars();
+                List<CarModel> cars = new List<CarModel>();
+                foreach (var car in carsData)
+                {
+                    cars.Add(new CarModel(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType));
+                }
+
+                ViewBag.dealerId = id;
+                ViewBag.cars = cars;
+                return View((IEnumerable<CarModel>)cars);
+            }
+        }
+
+        // POST: Dealer/AddCar/5
+        [HttpPost]
+        public ActionResult AddCar(string id, FormCollection collection)
+        {
+            string carId = collection["carId"].ToString();
+
+            DealerServiceClient dealerClient = new DealerServiceClient();
+            CarServiceClient carClient = new CarServiceClient();
+
+            CarServiceReference.Car car = carClient.getCar(carId);
+            DealerServiceReference.Car dealerCar = new DealerServiceReference.Car(car.Id, car.Brand, car.Series, car.ReleaseYear, car.DoorNum, car.Color, car.BodyType);
+            dealerClient.addDealerCar(id, dealerCar);
+            
+            return RedirectToAction("ListCars", new { id=id });
+        }
+
+        // GET: Dealer/DeleteCar/5
+        //public ActionResult DeleteCar(string dealerId, string carId)
+        //{          
+        //    using (var client = new DealerServiceClient())
+        //    {
+        //        client.deleteDealerCar(dealerId, carId);
+        //    }
+        //    return RedirectToAction("ListCars", new { id = dealerId });
+        //}
     }
 }
